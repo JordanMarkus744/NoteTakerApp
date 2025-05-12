@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Note Taker</title>
+</head>
+
+<body>
+  <header>
+    <h1>Note Taker</h1>
+    <p>Capture your thoughts and ideas</p>
+    <div id="user-info" style="display: none;">
+      <span id="user-email"></span>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <div id="content-wrapper">
+    <div id="notes-wrapper">
+      <!-- Notes will be dynamically rendered here -->
+    </div>
+  </div>
+
+  <button id="add-note-btn" onclick="showNotesPopup()" title="Add Note">+</button>
+
+  <div id="popup-overlay"></div>
+
+  <div id="notes-popup">
+    <div id="popup-header">
+      <input id="popup-title-input" type="text" placeholder="Untitled Note" />
+      <button id="close-popup-btn">×</button>
+    </div>
+    <textarea id="popup-content-input" placeholder="Type your note..."></textarea>
+    <div id="popup-actions">
+      <button id="delete-note-btn" onclick="deleteNote()">Delete</button>
+      <div id="popup-actions-right">
+        <button id="cancel-btn">Cancel</button>
+        <button id="save-note-btn" onclick="saveNote()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTH POPUP -->
+  <div id="auth-popup">
+    <div id="auth-card">
+      <div id="auth-tabs">
+        <button id="login-tab" class="active" onclick="switchTab('login')">Login</button>
+        <button id="signup-tab" onclick="switchTab('signup')">Sign Up</button>
+      </div>
+      <div id="login-form" class="auth-form">
+        <h2>Log In</h2>
+        <input type="email" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button id="login-button">Log In</button>
+        <p id="login-error" style="color: red; display: none;"></p>
+      </div>
+      <div id="signup-form" class="auth-form hidden">
+        <h2>Sign Up</h2>
+        <input type="email" id="signup-email" placeholder="Email" />
+        <input type="password" id="signup-password" placeholder="Password" />
+        <button id="signup-button">Sign Up</button>
+        <p id="signup-error" style="color: red; display: none;"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js">
+    
+  </script>
+</body>
+</html>

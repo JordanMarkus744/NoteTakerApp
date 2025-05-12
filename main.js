@@ -19,6 +19,7 @@ import {
   onAuthStateChanged,
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+import { inject } from "@vercel/analytics";
 
 // Firebase config
 const firebaseConfig = {

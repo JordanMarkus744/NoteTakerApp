@@ -19,8 +19,8 @@ import {
   onAuthStateChanged,
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
-// Remove unused Vercel Analytics import
-// import { inject } from "@vercel/analytics";
+
+import { inject } from "@vercel/analytics";
 
 // Firebase config
 const firebaseConfig = {
@@ -339,3 +339,5 @@ document.getElementById("cancel-btn").addEventListener("click", (e) => {
 });
 
 notesPopup.addEventListener("click", (e) => e.stopPropagation());
+
+inject();
